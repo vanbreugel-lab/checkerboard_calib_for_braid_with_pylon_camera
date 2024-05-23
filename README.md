@@ -4,7 +4,9 @@ For Basler USB 3 cameras running on ROS Noetic in Ubuntu 20.
 
 ## Getting pylon ros camera running
 
-Install the ROS package pylon-ros-camera. Notes:
+Install the ROS package pylon-ros-camera: [pylon-ros-camera](https://github.com/basler/pylon-ros-camera/tree/master)
+
+Notes:
   * I think you have to use pylon 6.2 for it to compile
   * Use the master branch (eb4ca3f9afc23c9b7f6f2459c3ca62aefbb47185) for this to work in Ubuntu 20 with ROS Noetic
 
