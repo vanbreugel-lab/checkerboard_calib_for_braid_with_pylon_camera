@@ -8,7 +8,7 @@ This works best (with Braid) if you use the old pylon_camera package. See instru
 
 ## Assign device IDs
 
-This is useful and necessary to use ros pylon_camera when there are multiple cameras plugged in. One at a time plug in a USB camera, use pylon viewer (`/opy/pylon/bin/pylonviewer`) to check the device serial number, then run the following command to set the device id. Then you can use this device id to specify which camera to launch with pylon_camera.
+This is useful and necessary to use ros pylon_camera when there are multiple cameras plugged in. One at a time plug in a USB camera, use pylon viewer (`/opt/pylon/bin/pylonviewer`) to check the device serial number, then run the following command to set the device id. Then you can use this device id to specify which camera to launch with pylon_camera.
 
 `rosrun pylon_camera write_device_user_id_to_camera 40450773`
 
@@ -26,7 +26,7 @@ We use a IR backlit printed sheet.
 ## Run pylon_camera and ROS checkerboard for each camera
 
 To make this easy you can use the `.yaml` and `.launch` files in the `pylon_checker_launch` directory. 
-1. Edit `checkerboard_cal_config.yaml` so that the `device_user_id` matches the device id of the camera that you want to calibrate. See screen shot below.
+1. Edit `checkerboard_cal_config.yaml` so that the `device_user_id` matches the device id o/f the camera that you want to calibrate. See screen shot below.
 2. If needed, edit `checkerboard_cal_config.yaml` so that the `exposure` gives you a good checkerboard image
 3. Run the launch file: `roslaunch checker_board_cal.launch`. *NOTE*: you may need to edito the launch file to ensure that the number of checkers and size is correct! This launch file is hard coded for our checkerboard calibrator. 
 4. Move the checkerboard around until the user interface shows green lines for x, y, and skew (and is possible size, but that does not always happen). Once you have enough data the calibrate button will be green. See screen shot below. 
