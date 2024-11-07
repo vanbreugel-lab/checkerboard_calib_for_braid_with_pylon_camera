@@ -4,11 +4,18 @@ For Basler USB 3 cameras running on ROS Noetic in Ubuntu 20.
 
 ## Getting pylon ros camera running
 
+##### Option 1: 
+
 Install the ROS package pylon-ros-camera: [pylon-ros-camera](https://github.com/basler/pylon-ros-camera/tree/master)
 
 Notes:
-  * I think you have to use pylon 6.2 for it to compile
+  * You have to use pylon 6.2 for it to compile
   * Use the master branch (eb4ca3f9afc23c9b7f6f2459c3ca62aefbb47185) for this to work in Ubuntu 20 with ROS Noetic
+  * You can intall pylon 6.2, run catkin_make, and then reinstall pylon 7.3 for braid. I think you need to keep the directory for pylon 6.2 in /opt. Recommendation: install pylon 6.2, move /opt/pylon to /opt/pylon6, set PYLON_ROOT to /opt/pylon6, run catkin_make, move /opt/pylon6 to ~/ temporarily, install pylon 7.3, move ~/pylon6 back to /opt/pylon6.
+
+##### Option 2: 
+
+Install the old version of pylon_camera: [pylon_camera](https://github.com/florisvb/pylon_camera). This works with pylon 5.2, otherwise same concept as option 1. 
 
 ## Assign device IDs
 
