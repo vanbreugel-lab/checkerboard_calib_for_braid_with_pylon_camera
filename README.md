@@ -4,21 +4,15 @@ For Basler USB 3 cameras running on ROS Noetic in Ubuntu 20.
 
 ## Getting pylon ros camera running
 
-##### Option 1: 
-
-Install the ROS package pylon-ros-camera: [pylon-ros-camera](https://github.com/basler/pylon-ros-camera/tree/master)
-
-Notes:
-  * You have to use pylon 6.2 for it to compile
-  * Use the master branch (eb4ca3f9afc23c9b7f6f2459c3ca62aefbb47185) for this to work in Ubuntu 20 with ROS Noetic
-  * You can intall pylon 6.2, run catkin_make, and then reinstall pylon 7.3 for braid. I think you need to keep the directory for pylon 6.2 in /opt. Recommendation: install pylon 6.2, move /opt/pylon to /opt/pylon6, set PYLON_ROOT to /opt/pylon6, run catkin_make, move /opt/pylon6 to ~/ temporarily, install pylon 7.3, move ~/pylon6 back to /opt/pylon6.
-  * See also: [ubuntu 20 install nodes](https://github.com/vanbreugel-lab/wind_tunnel_resources/blob/main/installation/ubuntu_20_noetic_install_notes.md)
+This works best (with Braid) if you use the old pylon_camera package. See instructions for [ubuntu 20 install nodes](https://github.com/vanbreugel-lab/wind_tunnel_resources/blob/main/installation/ubuntu_20_noetic_install_notes.md). If you try with the newer pylon-ros-camera package, you will probably have problems. 
 
 ## Assign device IDs
 
 This is useful and necessary to use ros pylon_camera when there are multiple cameras plugged in. One at a time plug in a USB camera, use pylon viewer (`/opy/pylon/bin/pylonviewer`) to check the device serial number, then run the following command to set the device id. Then you can use this device id to specify which camera to launch with pylon_camera.
 
-`rosrun pylon_camera set_device_user_id 40450773` (Note: command used to be write_device_user_id_to_camera)
+`rosrun pylon_camera write_device_user_id_to_camera 40450773`
+
+Then __unplug and replug your USB camera__!
 
 ![alt_text](images/write_device_id.png "write device id")
 
