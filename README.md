@@ -14,15 +14,11 @@ Notes:
   * You can intall pylon 6.2, run catkin_make, and then reinstall pylon 7.3 for braid. I think you need to keep the directory for pylon 6.2 in /opt. Recommendation: install pylon 6.2, move /opt/pylon to /opt/pylon6, set PYLON_ROOT to /opt/pylon6, run catkin_make, move /opt/pylon6 to ~/ temporarily, install pylon 7.3, move ~/pylon6 back to /opt/pylon6.
   * See also: [ubuntu 20 install nodes](https://github.com/vanbreugel-lab/wind_tunnel_resources/blob/main/installation/ubuntu_20_noetic_install_notes.md)
 
-##### Option 2: 
-
-Install the old version of pylon_camera: [pylon_camera](https://github.com/florisvb/pylon_camera). This works with pylon 5.2, otherwise same concept as option 1. See also: [ubuntu 20 install nodes](https://github.com/vanbreugel-lab/wind_tunnel_resources/blob/main/installation/ubuntu_20_noetic_install_notes.md)
-
 ## Assign device IDs
 
 This is useful and necessary to use ros pylon_camera when there are multiple cameras plugged in. One at a time plug in a USB camera, use pylon viewer (`/opy/pylon/bin/pylonviewer`) to check the device serial number, then run the following command to set the device id. Then you can use this device id to specify which camera to launch with pylon_camera.
 
-`rosrun pylon_camera write_device_user_id_to_camera 40450773`
+`rosrun pylon_camera set_device_user_id 40450773` (Note: command used to be write_device_user_id_to_camera)
 
 ![alt_text](images/write_device_id.png "write device id")
 
