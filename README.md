@@ -20,7 +20,7 @@ Install the old version of pylon_camera: [pylon_camera](https://github.com/flori
 
 ## Assign device IDs
 
-This is useful and necessary to use ros pylon_camera when there are multiple cameras plugged in. One at a time plug in a USB camera, use pylon viewer to check the device serial number, then run the following command to set the device id. Then you can use this device id to specify which camera to launch with pylon_camera.
+This is useful and necessary to use ros pylon_camera when there are multiple cameras plugged in. One at a time plug in a USB camera, use pylon viewer (`/opy/pylon/bin/pylonviewer`) to check the device serial number, then run the following command to set the device id. Then you can use this device id to specify which camera to launch with pylon_camera.
 
 `rosrun pylon_camera write_device_user_id_to_camera 40450773`
 
