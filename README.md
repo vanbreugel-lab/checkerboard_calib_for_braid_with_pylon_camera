@@ -35,6 +35,20 @@ To make this easy you can use the `.yaml` and `.launch` files in the `pylon_chec
 7. Repeat for every device id. 
 8. Once complete you should have a directory that looks a lot like the one in `test_data`
 
+## Sanity check your checkerboard calibration values
+
+1. The checkerboard calibration yields a intrinsic camera matrix:
+
+[fx, 0, px]
+[0, fy, py]
+[0, 0, 1]
+
+  * fx and fy are the focal length. For standard lenses, these should be quite similar in value. 
+  * px and py are the camera center. These should be close to 1/2 of the camera resolution in the x and y dimensions.
+
+2. The checkerboard calibration also yields four distortion parameters.
+
+  * the distortion parameters should be fairly small if you using standard (non fisheye) lenses. 
 
 #### 1. Edit the `device_user_id` in `checkerboard_cal_config.yaml`
 ![alt_text](images/ros_checkerboard_calibration_yaml.png "edit yaml")
